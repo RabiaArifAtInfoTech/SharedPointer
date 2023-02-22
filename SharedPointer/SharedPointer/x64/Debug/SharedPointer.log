@@ -1,6 +1,2 @@
 ﻿  Source.cpp
-E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\SharedPointer\Source.cpp(56,10): error C2440: 'return': cannot convert from 'int *' to 'int'
-E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\SharedPointer\Source.cpp(56,10): message : There is no context in which this conversion is possible
-E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\SharedPointer\Source.cpp(55,1): message : while compiling class template member function 'int Shared_Pointer<int>::getCount(void)'
-E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\SharedPointer\Source.cpp(66,42): message : see reference to function template instantiation 'int Shared_Pointer<int>::getCount(void)' being compiled
-E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\SharedPointer\Source.cpp(63,29): message : see reference to class template instantiation 'Shared_Pointer<int>' being compiled
+  SharedPointer.vcxproj -> E:\OneDrive - Infotech (Private) Limited\GitFolders\SharedPointer\SharedPointer\x64\Debug\SharedPointer.exe

@@ -6,31 +6,45 @@ class Shared_Pointer {
 	int* counter;
 public:
 	
-	Shared_Pointer() {
-		std::cout << "\nDefault Constructor  of shared pointer is called\n";
-		counter = new int(0);
-		(*counter)++;
-	}
+	//Shared_Pointer() {
+	//	std::cout << "\nDefault Constructor  of shared pointer is called\n";
+	//	counter = new int(0);
+	//	//std::cout << "\ncounter: " << *counter;
+
+	//	//(*counter)++;
+	//	//std::cout << "\ncounter: " << *counter;
+
+	//}
 	/*Shared_Pointer(T *pt) {
 		sharedPtr = pt;
 		std::cout << "\nDefault Constructor  of shared pointer is called\n";
 		counter = 0;
 		*counter++;
 	}*/
-	Shared_Pointer(T* shPtr) {
+	Shared_Pointer(T* Ptr = nullptr) {
 		std::cout << "\nConstructor  of shared pointer is called\n";
-		std::cout << "\ncounter: " << counter;
-		//counter = 0;
+		//std::cout << "\ncounter: " << counter;
+		sharedPtr = Ptr;
 		counter = new int(0);
-		counter++;
+		(*counter)++;
+		//std::cout << "\ncounter: " << *counter;
 
-		std::cout << "\n0counter: " << counter;
+
 	}
 	Shared_Pointer(Shared_Pointer<T>& shPtr) {
 		std::cout << "\nCopy Constructor  of shared pointer is called\n";
-		counter++;
+		sharedPtr = shPtr.sharedPtr;
+		counter = shPtr.counter;
+		(*counter)++;
 
-		std::cout << "\ncounter: " << counter << "\n";
+	}
+	T& operator=(Shared_Pointer<T>& shPtr)
+	{
+		std::cout << "\nCopy operator of shared pointer is called\n";
+		sharedPtr = shPtr.sharedPtr;
+		counter = shPtr.counter;
+		(*counter)++;
+		return *sharedPtr;
 
 	}
 	T& operator*()
@@ -39,6 +53,10 @@ public:
 
 	}
 	T* operator->()
+	{
+		return sharedPtr;
+	}
+	T* get()
 	{
 		return sharedPtr;
 	}
@@ -53,7 +71,7 @@ public:
 	}
 	int getCount()
 	{
-		return counter;
+		return *counter;
 	}
 };
 
@@ -63,21 +81,28 @@ int main()
 	Shared_Pointer<int> shPtr1(new int(2));
 	//*shPtr1 = 100;
 	//shPtr1 = 10;
-	std::cout << "\n\n"<< shPtr1.getCount() << "\n";
-	//std::cout << (int)shPtr1.getCount() / sizeof(int) << "\n";
+	std::cout << "\n\nGet Count of shPtr1: "<< shPtr1.getCount() << "\n";
 
 	Shared_Pointer<int> shPtr2;
 	shPtr2 = shPtr1;
+	std::cout << "\n\nGet Count of shPtr1: " << shPtr1.getCount() << "\n";
+	
 	Shared_Pointer<int> shPtr3(shPtr1);
-	shPtr2 = shPtr1;
 
-	std::cout << shPtr1.getCount() << "\n";
+	std::cout << "\n\nGet Count of shPtr1: " << shPtr1.getCount() << "\n";
 
+	
 	Shared_Pointer<int> shPtr4;
 	shPtr4 = shPtr1;
-	
+	/*std::cout << "\n\nGet shPtr1: " << shPtr1.get() << "\n";
+	std::cout << "\n\nGet shPtr1: " << shPtr2.get() << "\n";
+	std::cout << "\n\nGet shPtr1: " << shPtr3.get() << "\n";
+	std::cout << "\n\nGet shPtr1: " << shPtr4.get() << "\n";*/
 
-	std::cout << shPtr1.getCount() << "\n";
+	std::cout << "\n\nGet Count of shPtr1: " << shPtr1.getCount() << "\n";
+	std::cout << "\n\nGet Count of shPtr4: " << shPtr4.getCount() << "\n";
+
+
 
 	
 

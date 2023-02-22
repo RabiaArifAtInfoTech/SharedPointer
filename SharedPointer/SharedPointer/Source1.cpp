@@ -103,8 +103,8 @@
 //template<typename T>
 //class Shared_Pointer {
 //	T* sharedPtr;
-//	//Counter* counter;
-//	int* counter;
+//	Counter* counter;
+//	//int* counter;
 //public:
 //
 //	/*Shared_Pointer() {
@@ -117,8 +117,8 @@
 //		std::cout << "\nConstructor  of shared pointer is called\n";
 //
 //		sharedPtr = ptr;
-//		/*counter = new Counter();
-//		counter->operator++();*/
+//		counter = new Counter();
+//		counter->operator++();
 //	}
 //
 //	Shared_Pointer(Shared_Pointer<T>& shPtr) {
@@ -170,40 +170,40 @@
 //int main()
 //{
 //	//..........Example with Point class.....
-//	std::cout << "\n\n\n.........Example with Point class.....\n\n\n ";
+//	//std::cout << "\n\n\n.........Example with Point class.....\n\n\n ";
 //
-//	Point p1(12, 13, 44);
-//	//p1.PointX();
+//	//Point p1(12, 13, 44);
+//	////p1.PointX();
 //
-//	Shared_Pointer<Point> sharedPointer(new Point(1004, 24, 24));
-//	std::cout << "\n\n\sharedPointer'count: " << sharedPointer.use_count();
-//	//std::cout << "\n\n\nptr1's value now: " << << std::endl;
+//	//Shared_Pointer<Point> sharedPointer(new Point(1004, 24, 24));
+//	//std::cout << "\n\n\sharedPointer'count: " << sharedPointer.use_count();
+//	////std::cout << "\n\n\nptr1's value now: " << << std::endl;
 //
-//	Shared_Pointer<Point> sharedPointer2(sharedPointer);
-//	std::cout << "\n\n\sharedPointer'count: " << sharedPointer.use_count() << std::endl << std::endl;
-//	std::cout << "\n\n\sharedPointer2'count: " << sharedPointer2.use_count() << std::endl << std::endl;
-//	std::cout << "\n\n\sharedPointer value of x: ";
-//	sharedPointer->PrintX();
-//	std::cout << "\n\n\sharedPointer value of x: " << sharedPointer->PointX();
+//	//Shared_Pointer<Point> sharedPointer2(sharedPointer);
+//	//std::cout << "\n\n\sharedPointer'count: " << sharedPointer.use_count() << std::endl << std::endl;
+//	//std::cout << "\n\n\sharedPointer2'count: " << sharedPointer2.use_count() << std::endl << std::endl;
+//	//std::cout << "\n\n\sharedPointer value of x: ";
+//	//sharedPointer->PrintX();
+//	//std::cout << "\n\n\sharedPointer value of x: " << sharedPointer->PointX();
 //	//std::cout << "\n\n\sharedPointer value of x: " << *sharedPointer.PointX(); 
 //
 //	
-//	//Shared_Pointer<int> shPtr1(new int(42));
-// //   //*shPtr1 = 100;
-//	//std::cout << "\n\n\shPtr1'count: " << shPtr1.use_count();
-//	//std::cout << "\n\n\shPtr1's value now: " << *shPtr1 << std::endl;
+//	Shared_Pointer<int> shPtr1(new int(42));
+//    //*shPtr1 = 100;
+//	std::cout << "\n\n\shPtr1'count: " << shPtr1.use_count();
+//	std::cout << "\n\n\shPtr1's value now: " << *shPtr1 << std::endl;
 //
-//	//Shared_Pointer<int> shPtr2(shPtr1);
-//	//std::cout << "\n\n\shPtr1'count: " << shPtr1.use_count() << std::endl << std::endl;
-//	////shPtr1 = 10;
-//	////std::cout << (int)shPtr1.getCount() / sizeof(int) << "\n";
+//	Shared_Pointer<int> shPtr2(shPtr1);
+//	std::cout << "\n\n\shPtr1'count: " << shPtr1.use_count() << std::endl << std::endl;
+//	//shPtr1 = 10;
+//	//std::cout << (int)shPtr1.getCount() / sizeof(int) << "\n";
 //
-//	//Shared_Pointer<int> shPtr3(shPtr1);
-//	//std::cout << "\n\n\nptr1'count: " << shPtr1.use_count() << std::endl << std::endl;
-//	//Shared_Pointer<int> shPtr4;
-//	//shPtr4 = shPtr1;
-//	//std::cout << "\n\n\nptr1'count: " << shPtr1.use_count() << std::endl << std::endl;
-//	//std::cout << "\n\n\nptr4'count: " << shPtr4.use_count() << std::endl << std::endl;
+//	Shared_Pointer<int> shPtr3(shPtr1);
+//	std::cout << "\n\n\nptr1'count: " << shPtr1.use_count() << std::endl << std::endl;
+//	Shared_Pointer<int> shPtr4;
+//	shPtr4 = shPtr1;
+//	std::cout << "\n\n\nptr1'count: " << shPtr1.use_count() << std::endl << std::endl;
+//	std::cout << "\n\n\nptr4'count: " << shPtr4.use_count() << std::endl << std::endl;
 //
 //
 //
